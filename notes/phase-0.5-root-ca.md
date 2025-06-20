@@ -28,8 +28,7 @@ All devices are in VPN 0 with static addressing. NAT will be handled at the ISP 
 ---
 
 ## 🔧 Step 1 – Base Configuration on the Root CA Router
-
-
+```
 hostname ROOT-CA
 no aaa new-model
 clock timezone EST -5 0
@@ -61,7 +60,7 @@ line vty 5 15
 
 ntp master 1
 ntp server time.google.com
-
+```
 ## 🔐 Step 2 – Configure the Local CA Server
 
 In this step, I configured the IOSv router (running IOS 15.7(3)) to act as a local Root Certificate Authority (CA) using the `crypto pki server` command set. This CA will be used to sign certificate signing requests (CSRs) from my SD-WAN controllers.
