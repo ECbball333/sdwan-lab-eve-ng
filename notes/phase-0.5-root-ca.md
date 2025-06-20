@@ -73,6 +73,7 @@ This method avoids the need for external tools like OpenSSL or Cisco’s public 
 Generate a 2048-bit RSA key that the CA server will use to sign controller certificates:
 ```
 crypto key generate rsa label PKI modulus 2048
+
 Verify the key:
 show crypto key mypubkey rsa
 ```
