@@ -28,7 +28,7 @@ This phase covers the deployment and base configuration of Cisco SD-WAN controll
 ## 🔧 Configuration Summary (All Nodes)
 
 ### Common Values:
-- `organization-name`: connerco
+- `organization-name`: User defined
 - `site-id`: unique per node
 - `system-ip`: unique per node
 - `vbond`: IP address of primary orchestrator
