@@ -75,11 +75,12 @@ Generate a 2048-bit RSA key that the CA server will use to sign controller certi
 ```crypto key generate rsa label PKI modulus 2048```
 
 Verify the key:
-show crypto key mypubkey rsa
+```show crypto key mypubkey rsa```
 
 ## Step 2.2 Start and Configure the CA Server
 
 Create the CA server, configure its identity, and enable auto-signing:
+bash
 crypto pki server PKI
  database url flash:
  database level complete
