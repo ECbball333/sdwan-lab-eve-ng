@@ -78,9 +78,4 @@ Controller system parameters set	show system status	✅
 Inter-controller reachability	ping, static routes	✅
 vManage control connections up	show control connections	✅
 
-📌 Notes
-One vBond node will also serve as the ZTP server in Phase 0.
 
-The controller overlay has been initialized — all nodes will register edge devices in Phase 3.
-
-Controllers are using NATed interfaces via simulated ISP routers (to be configured in Phase 2).
