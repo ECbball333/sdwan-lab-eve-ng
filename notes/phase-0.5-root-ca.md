@@ -1,4 +1,4 @@
-# Phase 0.5 – Root CA Setup (IOSv 15.7.3)
+# Phase 1.5 – Root CA Setup (IOSv 15.7.3)
 
 In this phase, I configured a Cisco IOSv router running IOS 15.7(3) as a local Root Certificate Authority (CA) to sign the CSRs for my Cisco SD-WAN controllers. This setup replaces Cisco's hosted PKI infrastructure in a self-contained lab environment.
 
