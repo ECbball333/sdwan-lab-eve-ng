@@ -1,4 +1,3 @@
-# sdwan-lab-eve-ng
 # Cisco SD-WAN EVE-NG Lab
 
 This project documents a full-featured Cisco SD-WAN deployment built in an offline EVE-NG environment. The lab includes dual ISP simulation, ZTP-based onboarding, and 3 remote sites with routing integration.
