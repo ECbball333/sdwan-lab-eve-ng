@@ -70,14 +70,14 @@ This method avoids the need for external tools like OpenSSL or Cisco’s public 
 
 ---
 
-2.1 Generate RSA Key Pair
+## Step 2.1 Generate RSA Key Pair
 Generate a 2048-bit RSA key that the CA server will use to sign controller certificates:
 crypto key generate rsa label PKI modulus 2048
 
 Verify the key:
 show crypto key mypubkey rsa
 
-2.2 Start and Configure the CA Server
+## Step 2.2 Start and Configure the CA Server
 
 Create the CA server, configure its identity, and enable auto-signing:
 crypto pki server PKI
