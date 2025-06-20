@@ -41,11 +41,11 @@ system
  system-ip 1.1.1.1
  site-id 100
  organization-name ConnerCo
- vbond 192.0.2.10
+ vbond 100.100.100.102
 !
 vpn 0
  interface eth0
-  ip address 192.0.2.100/24
+  ip address 100.100.100.100/24
   no shutdown
 !
 
