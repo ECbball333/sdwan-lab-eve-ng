@@ -48,3 +48,31 @@ vpn 0
   ip address 192.0.2.100/24
   no shutdown
 !
+
+Each controller was configured with a static route or default gateway in VPN 0 to ensure full reachability between all nodes.
+
+🌐 vManage GUI Access
+Accessed via https://<vmanage-ip>:8443
+
+Default credentials:
+
+Username: admin
+
+Password: admin
+
+Completed initial setup wizard (if prompted)
+
+✅ Validation Checklist
+Checkpoint	Command / Method	Status
+All nodes boot and reachable	ping, show interface	✅
+GUI accessible on vManage	Web browser (:8443)	✅
+Controller system parameters set	show system status	✅
+Inter-controller reachability	ping, static routes	✅
+vManage control connections up	show control connections	✅
+
+📌 Notes
+One vBond node will also serve as the ZTP server in Phase 0.
+
+The controller overlay has been initialized — all nodes will register edge devices in Phase 3.
+
+Controllers are using NATed interfaces via simulated ISP routers (to be configured in Phase 2).
