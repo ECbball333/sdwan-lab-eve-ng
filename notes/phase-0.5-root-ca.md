@@ -42,7 +42,7 @@ interface g0/0
  no shutdown
 
 interface g0/1
- ip address dhcp   ! Used for external terminal (Putty)
+ ip address dhcp   #Used for external terminal (Putty)
  no shutdown
 
 ip http server
