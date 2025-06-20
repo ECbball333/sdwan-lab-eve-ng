@@ -39,7 +39,7 @@ ip name-server 8.8.8.8
 username admin privilege 15 secret <password>
 
 interface g0/0
- ip address 100.100.100.200 255.255.255.0
+ ip address <ip-address> <mask>
  no shutdown
 
 interface g0/1
@@ -50,7 +50,7 @@ ip http server
 ip http secure-server
 ip http authentication local
 
-ip route 0.0.0.0 0.0.0.0 100.100.100.1
+ip route 0.0.0.0 0.0.0.0 <default-gateway>
 
 line vty 0 4
  login local
@@ -78,13 +78,13 @@ Verify the key:
 ```show crypto key mypubkey rsa```
 
 ## Step 2.2 Start and Configure the CA Server
-Create the CA server, configure its identity, and enable auto-signing:
+Create the CA server, configure its identity, and enable auto-signing: 
 ```
 crypto pki server PKI
  database url flash:
  database level complete
- issuer-name cn=root.connerco.local
+ issuer-name cn=root.<org name>.local
  hash sha256
- database archive pkcs12 password Pass2885
+ database archive pkcs12 password <password>
  grant auto
  no shutdown
