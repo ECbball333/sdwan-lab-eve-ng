@@ -34,7 +34,7 @@ This phase covers the deployment and base configuration of Cisco SD-WAN controll
 - `vbond`: IP address of primary orchestrator
 - Interfaces: configured under `vpn 0`
 
-### Example Base Configuration:
+### Example vManage Base Configuration:
 ```bash
 system
  host-name vmanage01
@@ -77,5 +77,7 @@ GUI accessible on vManage	Web browser (:8443)	✅
 Controller system parameters set	show system status	✅
 Inter-controller reachability	ping, static routes	✅
 vManage control connections up	show control connections	✅
+```
+
 
 
