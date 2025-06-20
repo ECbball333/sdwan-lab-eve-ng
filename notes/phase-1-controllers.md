@@ -108,3 +108,31 @@ interface eth0
  no shut
 !
 Commit and-quit
+```
+## 🔧 vSmart1 – Base Configuration
+
+This is the base CLI configuration for `vSmart1` in the SD-WAN lab environment. It includes tunnel interface parameters for establishing secure control-plane connections.
+
+```bash
+config
+system
+ host-name vsmart1
+ system-ip 1.1.1.3
+ site-id 103
+ organization-name connerco
+ vbond 100.100.100.102
+!
+vpn 0
+ interface eth0
+  ip address 100.100.100.101/24
+  no shutdown
+  tunnel-interface
+   encapsulation ipsec
+   allow-service all
+  exit
+!
+ ip route 0.0.0.0/0 100.100.100.1
+!
+exit
+
+
