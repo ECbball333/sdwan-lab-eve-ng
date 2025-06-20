@@ -29,7 +29,7 @@ All devices are in VPN 0 with static addressing. NAT will be handled at the ISP 
 
 ## 🔧 Step 1 – Base Configuration on the Root CA Router
 
-```bash
+
 hostname ROOT-CA
 no aaa new-model
 clock timezone EST -5 0
@@ -76,23 +76,15 @@ In this step, I configured the IOSv router (running IOS 15.7.3) to act as a loca
 ---
 
 ### 2.1 Generate RSA Key Pair
-
 Generate a 2048-bit RSA key that the CA server will use to sign controller certificates:
-
-```bash
 crypto key generate rsa label PKI modulus 2048
+
 Verify the key:
-
-bash
-Copy
-Edit
 show crypto key mypubkey rsa
-2.2 Start and Configure the CA Server
-Create the CA server, configure its identity, and enable auto-signing:
 
-bash
-Copy
-Edit
+2.2 Start and Configure the CA Server
+
+Create the CA server, configure its identity, and enable auto-signing:
 crypto pki server PKI
  database url flash:
  database level complete
