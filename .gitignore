@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# EVE-NG exports
+*.qcow2
+*.unl.bak
+*.unl~*
+
+# Draw.io backups
+*.drawio~
+*.bak.drawio
+
+# System files
+*.log
+*.tmp
+
