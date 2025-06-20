@@ -61,3 +61,33 @@ line vty 5 15
 
 ntp master 1
 ntp server time.google.com
+
+## 🔐 Step 2 – Configure the Local CA Server
+
+In this step, I configured the IOSv router (running IOS 15.7(3)) to act as a local Root Certificate Authority (CA) using the `crypto pki server` command set. This CA will be used to sign certificate signing requests (CSRs) from my SD-WAN controllers.
+
+This method avoids the need for external tools like OpenSSL or Cisco’s public PKI, and works well in an isolated lab environment.
+
+---
+
+### 2.1 Generate a Key Pair for Signing Certificates
+
+Before starting the CA, generate a 2048-bit RSA key pair labeled `PKI`. This key will be used by the CA to sign CSRs.
+
+```bash
+crypto key generate rsa label PKI modulus 2048
+
+2.2 Start and Configure the PKI Server
+Now create and start the CA server using the following configuration. All commands are entered under global config mode.
+
+```bash
+crypto pki server PKI
+ database url flash:
+ database level complete
+ issuer-name cn=root.connerco.local
+ hash sha256
+ database archive pkcs12 password Pass2885
+ grant auto
+ no shutdown
+
+
