@@ -40,7 +40,7 @@ system
  host-name vmanage01
  system-ip 1.1.1.1
  site-id 100
- organization-name ConnerCo
+ organization-name connerco
  vbond 100.100.100.102
 !
 vpn 0
