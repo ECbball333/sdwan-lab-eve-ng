@@ -77,5 +77,34 @@ Inter-controller reachability	ping, static routes	✅
 vManage control connections up	show control connections	✅
 ```
 
+## 🔧 vBond1 – Base Configuration
 
+This is the CLI base configuration for `vBond1` used in the SD-WAN lab.
 
+```bash
+config
+system
+ host-name vbond1
+ system-ip 1.1.1.2
+ site-id 102
+ organization-name connerco
+ vbond  100.100.100.102 local  # Enables vbond role
+!
+vpn 0
+ interface ge0/0
+  ip address 100.100.100.102/24
+  no shutdown
+ tunnel-interface
+  allow-service all # ONLY USE IN LAB ENVIRONMENT!
+  encapsulation ipsec
+!
+ ip route 0.0.0.0/0 100.100.100.1
+!
+exit
+!
+vpn 512
+interface eth0
+ ip add dhcp
+ no shut
+!
+Commit and-quit
