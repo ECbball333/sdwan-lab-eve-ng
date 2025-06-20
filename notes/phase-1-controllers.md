@@ -48,7 +48,11 @@ vpn 0
   ip address 100.100.100.100/24
   no shutdown
 !
-
+vpn 512    # if needed for remote management
+ interface eth1
+  ip dhcp-client
+  no shut
+!
 Each controller was configured with a static route or default gateway in VPN 0 to ensure full reachability between all nodes.
 
 🌐 vManage GUI Access
