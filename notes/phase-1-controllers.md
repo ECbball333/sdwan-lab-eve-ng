@@ -68,8 +68,6 @@ Username: admin
 
 Password: admin
 
-Completed initial setup wizard (if prompted)
-
 ✅ Validation Checklist
 Checkpoint	Command / Method	Status
 All nodes boot and reachable	ping, show interface	✅
