@@ -70,7 +70,7 @@ Password: admin
 
 ✅ Validation Checklist
 Checkpoint	Command / Method	Status
-All nodes boot and reachable	ping, show interface	✅
+All nodes boot and reachable	ping, show interface	
 GUI accessible on vManage	Web browser (:8443)	
 Controller system parameters set:	```show system status```
 vManage control connections up:	```show control connections```	
