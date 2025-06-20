@@ -69,18 +69,30 @@ In this step, I configured the IOSv router (running IOS 15.7(3)) to act as a loc
 This method avoids the need for external tools like OpenSSL or Cisco’s public PKI, and works well in an isolated lab environment.
 
 ---
+## 🔐 Step 2 – Configure the Local CA Server
 
-### 2.1 Generate a Key Pair for Signing Certificates
+In this step, I configured the IOSv router (running IOS 15.7.3) to act as a local Root Certificate Authority (CA) using the `crypto pki server` command set. This CA will sign CSRs for my SD-WAN controllers.
 
-Before starting the CA, generate a 2048-bit RSA key pair labeled `PKI`. This key will be used by the CA to sign CSRs.
+---
+
+### 2.1 Generate RSA Key Pair
+
+Generate a 2048-bit RSA key that the CA server will use to sign controller certificates:
 
 ```bash
 crypto key generate rsa label PKI modulus 2048
+Verify the key:
 
-2.2 Start and Configure the PKI Server
-Now create and start the CA server using the following configuration. All commands are entered under global config mode.
+bash
+Copy
+Edit
+show crypto key mypubkey rsa
+2.2 Start and Configure the CA Server
+Create the CA server, configure its identity, and enable auto-signing:
 
-```bash
+bash
+Copy
+Edit
 crypto pki server PKI
  database url flash:
  database level complete
@@ -89,5 +101,3 @@ crypto pki server PKI
  database archive pkcs12 password Pass2885
  grant auto
  no shutdown
-
-
